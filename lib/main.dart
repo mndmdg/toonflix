@@ -4,7 +4,7 @@ import 'package:toonflix/widgets/currency_card.dart';
 
 void main() {
   // dart entry point
-  runApp(App());
+  runApp(_AppState());
 }
 
 // 위젯을 만든다는 건 클래스를 만든다는 것
@@ -150,6 +150,50 @@ class App extends StatelessWidget {
                 )
               ],
             ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _AppState extends StatefulWidget {
+  @override
+  State<_AppState> createState() => __AppStateState();
+}
+
+class __AppStateState extends State<_AppState> {
+  List<int> numbers = [];
+
+  void onClicked() {
+    setState(() {
+      numbers.add(numbers.length);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: const Color(0xFFF4EDDB),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Click Counter',
+                style: TextStyle(
+                  fontSize: 30,
+                ),
+              ),
+              for (var n in numbers) Text('$n'),
+              IconButton(
+                onPressed: onClicked,
+                icon: const Icon(
+                  Icons.add_box_rounded,
+                ),
+              )
+            ],
           ),
         ),
       ),
