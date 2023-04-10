@@ -13,7 +13,7 @@ class ToonFlix extends StatelessWidget {
         foregroundColor: Colors.green,
         centerTitle: true,
         title: const Text(
-          'Today\'s Toons',
+          '🤷‍♂️ 오늘의 웹툰 🤷‍♂️',
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.w100,
